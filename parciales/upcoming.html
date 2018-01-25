@@ -1,0 +1,15 @@
+<h1 class="animated flip" style="position:relative; top:15px;left:2%;">Upcoming movies in theatres</h1>
+
+
+<div class="container animate zoomInRight fadeIn" style="margin-top:20px;">
+    <div ng-repeat="result in details | filter:searchIn" class="row col-md-4 miClase fadeIn container-img animated flip">
+        <img ng-src="{{urlMoviedbIMG}}{{result.poster_path || result.profile_path}}" class="col-md-12 img-fluid image">
+        <p class="claseImg">{{result.original_name || result.title || result.name}}</p>
+        <div class="overlay">
+            <div class="text">Type: {{result.media_type | uppercase}}</div>
+            <div ng-if="result.release_date" class="text">Date: {{result.release_date}}</div>
+            <div ng-if="result.first_air_date" class="text">Date: {{result.first_air_date}}</div>
+            <p id="myText" class="text fix">Overview: {{result.overview || result.name}}</p>
+        </div>
+    </div>
+</div>

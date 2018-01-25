@@ -1,0 +1,63 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="fast zoomInRight">
+		<div class="input-group search-bar">
+
+			<input type="text" ng-model="searchIn" class="form-control" placeholder="Enter full movie name, series or actor"
+			 autofocus />
+			<span class="input-group-addon bar-style">
+				<i class="glyphicon glyphicon-search" ng-click="fetch"></i>
+			</span>
+		</div>
+	
+		<div id="main-info" ng-include="partials/main-info.html" class="col-md-8"></div>
+	
+		<div id="related-results" ng-include="partials/related-results.html" class="col-md-4 animated bounce related-results"></div>
+</div>
+
+<div class="container animate zoomInRight fadeIn" style="margin-top:20px;">
+	<div ng-repeat="result in details | filter:searchIn" class="row col-md-4 miClase fadeIn container-img">
+		<img ng-src="{{urlMoviedbIMG}}{{result.poster_path || result.profile_path}}" class="col-md-12 img-fluid image">
+		<p class="claseImg">{{result.original_name || result.title || result.name}}</p>
+		<div class="overlay">
+			<div class="text">Type: {{result.media_type | uppercase}}</div>
+			<div ng-if="result.release_date" class="text">Date: {{result.release_date}}</div>
+			<div ng-if="result.first_air_date" class="text">Date: {{result.first_air_date}}</div>
+			<p id="myText" class="text fix">Overview: {{result.overview || result.name}}</p>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!--
+<div class="container">
+	<div class="card-group">
+				<div ng-repeat="result in details | filter:searchIn" class="col-md-4" style="width: 18rem;">
+					<img ng-src="{{urlMoviedbIMG}}{{result.poster_path}}" class="img-fluid card-img-top">
+					<div class="card-body">
+								<a href="#" class="btn btn-primary">Go somewhere</a>
+							</div>
+				</div>
+	</div>
+</div>
+
+<div class="card-group top30 ">
+	<div class=" col-md-15" ng-repeat="result in details | filter:searchIn">
+		<img class="card-img-top puntero" ng-src="{{urlMoviedbIMG}}{{result.poster_path}}">
+		<div class="card-body">
+			<h4 class="card-title"></h4>
+			<p class="card-text"></p>
+		</div>
+	</div>
+</div>
+
+
+<div></div>-->

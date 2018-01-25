@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html ng-app="universidadApp" ng-controller="mainCtrl">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Mr. Cinema</title>
+
+        <!-- Incluir jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Incluir Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="css/animate.css">
+
+        <!-- Estilo personalizado -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Incluir AngularJS -->
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/angular-route.min.js"></script>
+        <script src="js/lib/ui-utils.min.js"></script>
+
+
+        <script src="js/app.js"></script>
+        <script src="js/config.js"></script>
+
+        <!-- Controladores de páginas -->
+        <script src="js/inicioCtrl.js"></script>
+        <script src="js/trendCtrl.js"></script>
+        <script src="js/upcomingCtrl.js"></script>
+
+        
+        <style>
+            body {
+                background: url(sky.png);
+                background-repeat: repeat !important;
+                background-attachment: fixed;
+            }
+
+            div.miClase > img.col-md-12 {
+                max-height: 350px;
+                margin-top: 10%;
+                border-radius: 50px;
+            }
+
+            /* Fade-In Effect */
+            .visible
+            {
+                       visibility: visible;
+                       opacity: 1;
+                       transition: opacity 2s linear;
+            }                
+            /* Fade-Out Effect */
+            .hidden
+            {
+                       visibility: hidden;
+                       opacity: 0;
+                       transition: visibility 0s 2s, opacity 2s linear;
+            }                
+            /*.container > div > img
+            {
+                       background: none repeat scroll 0 0 #f5f;
+                       border: 5px solid #808080;
+                       border-radius: 50px;
+                       padding: 10px;
+                       width: 250px;
+            }*/
+
+            .claseImg{
+                    position: relative;
+                    top: 10px;
+                    text-align: center;
+            }
+
+            .image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+      background-color: #40555f;
+    opacity: 0.9;
+    border-radius: 50px;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+
+.container-img:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  /* white-space: nowrap;   */
+  color: white;
+  font-size: 20px;
+  position: relative;
+  overflow: hidden;
+  top: 18%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+            .fix {
+width: 86%;
+    left: 53%;
+    top: 50%;
+    height: 70%;
+    overflow-y: auto;
+            }
+            
+
+        </style>
+        
+    </head>    
+    <body>
+        
+        <div ng-include="menuSuperior"></div>
+
+        
+        <div class="container">
+        <!-- La pagina principal ira aquí -->
+            
+            <div ng-view></div>
+
+        </div><!-- /.container -->
+
+
+    </body>
+</html>
