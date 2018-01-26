@@ -1,33 +1,16 @@
-'use strict';
-app.controller('UpcomingCtrl', function ($scope, $http) {
+"use strict";
+app.controller("UpcomingCtrl", function($scope, $http) {
 
     $scope.setActive("mUpcoming");
 
-    $scope.$watch('search', function () {
-        fetch();
-    });
+        // $scope.etiquetas = ["2006", "2007", "2008", "2009"];
+        // $scope.series = ["Ventas", "Gastos"];
 
-    var urlMoviedb = "https://api.themoviedb.org/3";
-    var apiKey = "4293cdd4be6daa38f0b309d4539c0680";
-    var path = urlMoviedb + "/movie/top_rated?api_key=" + apiKey + "&language=en-US&page=1";
-    $scope.urlMoviedbIMG = "http://image.tmdb.org/t/p/w500";
+        // $scope.datos = [[65, 59, 80, 81], [28, 48, 40, 19]];
 
+        $scope.etiquetas = ["2006", "2007", "2008", "2009","2008", "2009"];
+        $scope.series = ["Popularity"];
 
-    function fetch() {
-        $http.get(path)
-            .then(function (response) {
-                $scope.details = response.data.results;
-                console.log($scope.details);
+        $scope.datos = [[65, 59, 80, 81, 77, 22]];        
 
-            });
-    }
-
-    $scope.update = function (movie) {
-        $scope.search = movie.Title;
-        console.log(movie.Title);
-    };
-
-    $scope.select = function () {
-        this.setSelectionRange(0, this.value.length);
-    }
 });
