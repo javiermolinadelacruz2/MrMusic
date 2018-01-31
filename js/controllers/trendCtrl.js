@@ -15,7 +15,8 @@ app.controller('trendCtrl', function ($scope, $http) {
           url:
             "https://api.spotify.com/v1/search?query=martin&type=artist&limit=20",
           headers: {
-            Authorization: "Bearer BQAgwor95Tp3WRGW_HyRg4491h1ZT35Fode9JnV54sa-UCzAJq5FLfwdtwAX2VXGn2hyA3SAK2ARCoThoeU",
+            Authorization:
+              "Bearer BQDPY1Ioiwgduggj2xPVj_tPxtg_7KByPtFyG6tfhvFR_rueKsqUYBr1h6BkOznKsolBIWpWDGWNYb8i7R4",
             Accept: "application/json"
           }
         }).then(function(response) {
@@ -29,11 +30,4 @@ app.controller('trendCtrl', function ($scope, $http) {
         });
     }
 
-    $scope.update = function (movie) {
-        $scope.search = movie.Title;
-    };
-
-    $scope.select = function () {
-        this.setSelectionRange(0, this.value.length);
-    }
 });
