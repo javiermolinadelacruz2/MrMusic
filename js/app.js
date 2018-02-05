@@ -1,4 +1,4 @@
-var app = angular.module("universidadApp", ["ngRoute", "ui.mask", "chart.js"]);
+var app = angular.module("universidadApp", ["ui.mask", "chart.js", "ui.router"]);
 
 app.controller('mainCtrl', ['$scope','$http', function($scope,$http){
   

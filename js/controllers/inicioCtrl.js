@@ -18,14 +18,14 @@ app.controller('inicioCtrl', ['$scope','$http', function($scope,$http){
 			 search = "asdwwww";
 			 
 		path = "https://api.spotify.com/v1/search?query=" + search + "&type=artist&limit=20";
-		path = path.replace(/ /g,"&");
+		path = path.replace(/ /g,"&");	
 
         $http({
           method: "GET",
           url: path,
           headers: {
             Authorization:
-              "Bearer BQDPY1Ioiwgduggj2xPVj_tPxtg_7KByPtFyG6tfhvFR_rueKsqUYBr1h6BkOznKsolBIWpWDGWNYb8i7R4",
+              "Bearer BQDcFcH8CstphHpvzERmx_jwQCy5mrYIhNG_Z_kcvQNxAc6FRFGcoTLqN4WTV3y-t4QiQs4jd7B55N2I44Q",
             Accept: "application/json"
           }
         }).then(function(response) {

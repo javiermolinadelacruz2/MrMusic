@@ -18,7 +18,8 @@
 
         <!-- Incluir AngularJS -->
         <script src="js/lib/angular.min.js"></script>
-        <script src="js/lib/angular-route.min.js"></script>
+        <script src="https://unpkg.com/@uirouter/angularjs@1.0.14/release/angular-ui-router.min.js"></script>
+        <!-- <script src="js/lib/angular-route.min.js"></script> -->
         <script src="js/lib/ui-utils.min.js"></script>
         <!-- <script src="js/lib/angular-fusioncharts.min.js"></script> -->
 
@@ -136,7 +137,7 @@ width: 86%;
         <div class="container">
         <!-- La pagina principal ira aquí -->
             
-            <div ng-view></div>
+            <div ui-view></div>
 
         </div><!-- /.container -->
 
