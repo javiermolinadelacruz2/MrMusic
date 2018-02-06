@@ -14,4 +14,28 @@
     </div>
 </div> -->
     
-<canvas class="chart chart-bar" chart-data="datos" chart-labels="etiquetas" chart-series="series"></canvas>
+<canvas id="canvas1" class="chart chart-bar" chart-options="opciones" chart-data="datos" chart-labels="etiquetas1" chart-series="series"></canvas>
+
+<canvas ng-hide="true" id="canvas2" class="chart chart-bar" width="600" height="300" chart-options="opciones2" chart-data="datos" chart-labels="etiquetas2" chart-series="series"></canvas>
+
+
+<script>
+
+    var canvas2 = document.getElementById("canvas2");
+
+    var link = document.createElement('a');
+    link.innerHTML = 'download canvas';
+    link.addEventListener('click', function(ev) {
+                                        if (canvas2.msToBlob) {
+                                            var blob = canvas2.msToBlob();
+                                            window.navigator.msSaveBlob(blob, 'canvas.png');
+                                        }else{
+                                            link.href = canvas2.toDataURL();
+                                            link.download = "canvas.png";
+                                        }
+                                }, false);
+    document.body.appendChild(link);
+
+
+
+</script>

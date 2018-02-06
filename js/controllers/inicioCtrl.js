@@ -25,7 +25,7 @@ app.controller('inicioCtrl', ['$scope','$http', function($scope,$http){
           url: path,
           headers: {
             Authorization:
-              "Bearer BQAxEQBB2YAaHrOUkbxIO0ZmyCywNmMFg583m7aixsKMOUJjOzzMW-DdHQtgbvJ6oxCY9IOnmKDFExAroUE",
+              "Bearer BQB3xmTIJ6YOTEpTYcleaPTg2etinoyOQu4V46BEcjHbGAN_iXz0-_knJtT1Z4x2tK8pjw_9tKTOpfyufmU",
             Accept: "application/json"
           }
         }).then(function(response) {
@@ -51,14 +51,21 @@ app.controller('inicioCtrl', ['$scope','$http', function($scope,$http){
 		setTimeout(function () { searchArtist(); }, 0);
 		//fetch();
 		
-	});
-
-	$scope.normalDialog = function() {
-      ngDialog.open({
-        template: "../../parciales/template1.html",
-        className: "ngdialog-theme-default",
-        scope: $scope
-      });
+  });
+  
+    $scope.modalShown = false;
+    $scope.modalShown2 = false;
+    $scope.user = { name: "Javier", surname: "Molina", shortKey: "1111" };
+    $scope.userMod = {};
+    $scope.toggleModal = function() {
+      $scope.modalShown = !$scope.modalShown;
+    };
+    $scope.toggleModal2 = function() {
+      $scope.modalShown2 = !$scope.modalShown2;
+    };
+    $scope.saveUser = function(usr) {
+      $scope.userMod = usr;
+      $window.alert("Desde metodo SALVAR del controller fuera de la ventana: " + $scope.userMod.shortKey);
     };
 
 

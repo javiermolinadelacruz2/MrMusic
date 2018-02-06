@@ -22,8 +22,8 @@
 </div>
 
 <div class="container animate zoomInRight fadeIn" style="margin-top:20px;">
-	<div ng-repeat="result in details | filter:searchIn" class="row col-md-4 miClase fadeIn container-img"> <!--ng-if="result.name == searchIn" -->
-		<img ng-click="normalDialog()" ng-if="result.type == 'artist'"ng-src="{{result.images[0].url || fotoDefecto}}" class="col-md-12 img-fluid image">
+	<div ng-click='toggleModal2()' ng-repeat="result in details | filter:searchIn" class="row col-md-4 miClase fadeIn container-img"> <!--ng-if="result.name == searchIn" -->
+		<img ng-if="result.type == 'artist'"ng-src="{{result.images[0].url || fotoDefecto}}" class="col-md-12 img-fluid image">
 		<p  ng-if="result.type == 'artist'" class="claseImg">{{result.name || result.title}}</p>
 		<!--<div class="overlay">
 			<div class="text">Type: {{result.media_type | uppercase}}</div>
@@ -34,16 +34,16 @@
 	</div>
 </div>
 
-<div ng-controller='popUpCtrl'>
-    <button ng-click='toggleModal2()'>Open Modal Dialog 2</button>
-    <modal-dialog 	show='modalShown2' 
-                	width='50' 
-                    height='50' 
-                    modal-user="user" 
-                    save-user="saveUser(user)"
-                    template-user="parciales/popUpArtist.html">
-    </modal-dialog>
-<div>
+<!-- <div ng-controller='popUpCtrl'> -->
+<button ng-click='toggleModal2()'>Open Modal Dialog 2</button> 
+<modal-dialog 	show='modalShown2' 
+                width='50' 
+                height='50' 
+                modal-user="user" 
+                save-user="saveUser(user)"
+                template-user="parciales/popUpArtist.html">
+</modal-dialog>
+<!-- <div> -->
 
 
 
