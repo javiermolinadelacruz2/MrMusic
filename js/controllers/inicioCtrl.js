@@ -25,7 +25,7 @@ app.controller('inicioCtrl', ['$scope','$http', function($scope,$http){
           url: path,
           headers: {
             Authorization:
-              "Bearer BQDcFcH8CstphHpvzERmx_jwQCy5mrYIhNG_Z_kcvQNxAc6FRFGcoTLqN4WTV3y-t4QiQs4jd7B55N2I44Q",
+              "Bearer BQAxEQBB2YAaHrOUkbxIO0ZmyCywNmMFg583m7aixsKMOUJjOzzMW-DdHQtgbvJ6oxCY9IOnmKDFExAroUE",
             Accept: "application/json"
           }
         }).then(function(response) {

@@ -34,6 +34,17 @@
 	</div>
 </div>
 
+<div ng-controller='popUpCtrl'>
+    <button ng-click='toggleModal2()'>Open Modal Dialog 2</button>
+    <modal-dialog 	show='modalShown2' 
+                	width='50' 
+                    height='50' 
+                    modal-user="user" 
+                    save-user="saveUser(user)"
+                    template-user="parciales/popUpArtist.html">
+    </modal-dialog>
+<div>
+
 
 
 

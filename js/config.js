@@ -4,7 +4,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state("home", {
-      url: "index",
+      url: "home",
       templateUrl: "parciales/home.html",
       controller: "inicioCtrl"
 	})
@@ -21,7 +21,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: "UpcomingCtrl"
     });
 
-     //$urlRouterProvider.otherwise("home");
+     $urlRouterProvider.otherwise("home");
 });
 
 
