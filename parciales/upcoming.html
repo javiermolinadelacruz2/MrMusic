@@ -18,7 +18,7 @@
 
 <canvas ng-hide="true" id="canvas2" class="chart chart-bar" width="600" height="300" chart-options="opciones2" chart-data="datos" chart-labels="etiquetas2" chart-series="series"></canvas>
 
-
+<a id="descargaPNG" ng-click="update($event)" href>hola</a> 
 <script>
 
     var canvas2 = document.getElementById("canvas2");
@@ -26,6 +26,9 @@
     var link = document.createElement('a');
     link.innerHTML = 'download canvas';
     link.addEventListener('click', function(ev) {
+                                        console.log(canvas2);
+                                        console.log(ev);
+                                        console.log(canvas2.msToBlob);
                                         if (canvas2.msToBlob) {
                                             var blob = canvas2.msToBlob();
                                             window.navigator.msSaveBlob(blob, 'canvas.png');
