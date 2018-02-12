@@ -1,5 +1,5 @@
 "use strict";
-app.controller("UpcomingCtrl", function($scope, $http) {
+app.controller("UpcomingCtrl", function($scope, $http, $base64) {
 
         $scope.setActive("mUpcoming");
 
@@ -26,19 +26,28 @@ app.controller("UpcomingCtrl", function($scope, $http) {
                             responsive: false   
         }
 
+        
+        var docDefinition = { content: "This is an sample PDF printed with pdfMake" };
+
         $scope.update = function(e){
             console.log(e);
             console.log(e.currentTarget.id);//coger id
             console.log(e.currentTarget.outerHTML);
         };
-// $scope.descargar = function(ev) {
 
-//       if (canvas2.msToBlob) {
-//         var blob = canvas2.msToBlob();
-//         window.navigator.msSaveBlob(blob, 'canvas.png');
-//       }else{
-//         link.href = canvas2.toDataURL();
-//         link.download = "canvas.png";
-//       }
-//     };
+       // var enlace = angular.element(document.querySelector("#descargaPNG"));
+        var canvas2 = angular.element("#canvas2");
+        
+        console.log(canvas2);
+
+
+        var canvas2Data = $base64.encode(canvas2);
+        $scope.canvas2DataURL = encodeURIComponent(canvas2Data);
+
+        var myEl = angular.element(document.querySelector("#descargaPNG"));
+        console.log(myEl);
+
+        //<img alt="{{p.alt}}" data-ng-src="{{'data:image/png;base64,'+p.Photo}}" class="photo" />;
+
+
 });
