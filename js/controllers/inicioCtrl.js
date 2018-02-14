@@ -25,14 +25,19 @@ app.controller('inicioCtrl', ['$scope','$http', function($scope,$http){
           url: path,
           headers: {
             Authorization:
-              "Bearer BQBvBbLx8HTSrqvlF9e89rS9dTfYnyYeqEGxjQAn7baBR7KTo1bdI_-7bCwHhn-foRZd3Hnf_a7G0a74DvI",
+              "Bearer BQCvkLLp56y3kcecGj_POZdVNdcgkgLEKIdVtm70V3nYjkJlT7sPjXZq51g72kutSmUTPtfnv88UE0YYhcE",
             Accept: "application/json"
           }
         }).then(function(response) {
           if (response.statusText == "OK") {
             $scope.details = response.data.artists.items;
-            console.log($scope.details);
+
+            $scope.datosGraph = [];
+            for (var i = 0; i < $scope.details.length; i++) $scope.datosGraph[i] = $scope.details[i].popularity;
+
             console.log("REQUEST OK");
+            console.log($scope.details);
+            console.log($scope.datosGraph);
           } else {
             // failed
             console.log("ERROOOOOOOOOOOOOOOOOOR");
@@ -67,6 +72,14 @@ app.controller('inicioCtrl', ['$scope','$http', function($scope,$http){
       $scope.userMod = usr;
       $window.alert("Desde metodo SALVAR del controller fuera de la ventana: " + $scope.userMod.shortKey);
     };
+
+    $scope.etiquetas1 = ["Año 2006", "Año 2007", "Año 2008", "Año 2009", "Año 2008", "Año 2009"];
+    $scope.etiquetas2 = ["Año 2006", "Año 2006", "Año 2006", "Año 2006", "Año 2006", "Año 2006"];
+    $scope.series = ["Popularity"];
+
+    $scope.datosGraph = [65, 59, 80, 81, 77, 22];
+
+    $scope.opciones = { scales: { xAxes: [{ barThickness: 10 }] } };
 
 
 }]);

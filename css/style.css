@@ -2,6 +2,10 @@ body {
   padding-top: 50px;
 }
 
+.azul{
+  color: blue;
+}
+
 /* Styles go here */
 
 .ng-modal-overlay {

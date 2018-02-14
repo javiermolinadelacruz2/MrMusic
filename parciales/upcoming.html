@@ -1,44 +1,68 @@
-<!-- <h1 class="animated flip" style="position:relative; top:15px;left:2%;"></h1>
-
-
-<div class="container animate zoomInRight fadeIn" style="margin-top:20px;">
-    <div ng-repeat="result in details | filter:searchIn" class="row col-md-4 miClase fadeIn container-img animated flip">
-        <img ng-src="{{urlMoviedbIMG}}{{result.poster_path || result.profile_path}}" class="col-md-12 img-fluid image">
-        <p class="claseImg">{{result.original_name || result.title || result.name}}</p>
-        <div class="overlay">
-            <div class="text">Type: {{result.media_type | uppercase}}</div>
-            <div ng-if="result.release_date" class="text">Date: {{result.release_date}}</div>
-            <div ng-if="result.first_air_date" class="text">Date: {{result.first_air_date}}</div>
-            <p id="myText" class="text fix">Overview: {{result.overview || result.name}}</p>
-        </div>
-    </div>
-</div> -->
+<hr>
+<canvas id="canvas1" ng-click="triggerDownload($event)" class="chart chart-bar" chart-options="opciones" chart-data="datos" chart-labels="etiquetas1" chart-series="series"></canvas>
+<hr>
+<canvas style="z-index:1;" ng-show="true" id="canvas2" class="chart chart-bar" width="600" height="300" chart-options="opciones2" chart-data="datos" chart-labels="etiquetas2" chart-series="series"></canvas>
+<hr>
+<a id="descargaPDF" ng-click="ExportPdf()">PDF</a>
+<hr>       
+<div ng-include="tblProfesores"></div>
+<!-- <h1>{{etiquetas1}}</h1> -->
     
-<canvas id="canvas1" class="chart chart-bar" chart-options="opciones" chart-data="datos" chart-labels="etiquetas1" chart-series="series"></canvas>
+    <!-- <ul id="users"></ul>
 
-<canvas ng-hide="true" id="canvas2" class="chart chart-bar" width="600" height="300" chart-options="opciones2" chart-data="datos" chart-labels="etiquetas2" chart-series="series"></canvas>
+    <script type="text/x-kendo-template" id="myTemplate">
+        #if(isAdmin){#
+            <li>#: name # is Admin</li>
+        #}else{#
+            <li>#: name # is User</li>
+        #}#
+        <h1>HOLA</h1>
+    </script>
 
-<a id="descargaPDF" ng-click="generatePdf();">PDF</a> 
+
+
+    <script type="text/javascript">
+        var templateContent = $("#myTemplate").html();
+        var template = kendo.template(templateContent);
+
+        var data = [
+            { name: "John", isAdmin: false },
+            { name: "Alex", isAdmin: true }
+        ];
+
+        var result = kendo.render(template, data); 
+
+        $("#users").html(result); 
+    </script> -->
+
 <script>
-
+/*
     var canvas2 = document.getElementById("canvas2");
+    //var canvas1 = document.getElementById("canvas1");
 
     var link = document.createElement('a');
     link.innerHTML = 'download canvas';
     link.addEventListener('click', function(ev) {
                                         console.log(canvas2);
-                                        console.log(ev);
-                                        console.log(canvas2.msToBlob);
+                                        console.log("JS: "+ev);
                                         if (canvas2.msToBlob) {
                                             var blob = canvas2.msToBlob();
                                             window.navigator.msSaveBlob(blob, 'canvas.png');
                                         }else{
+                                            console.log("JS: ")
                                             link.href = canvas2.toDataURL();
                                             link.download = "canvas.png";
                                         }
                                 }, false);
     document.body.appendChild(link);
 
+    canvas1.addEventListener('click',function(){
+        
+        var imgData = canvas1.toDataURL('image/png');
+        var doc = new jsPDF();
+        doc.addImage(imgData, 'PNG');
+        doc.save('canvas.pdf');
 
-
+    });
+*/
 </script>

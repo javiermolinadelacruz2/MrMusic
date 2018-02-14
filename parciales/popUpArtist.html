@@ -2,14 +2,18 @@
   <div class='ng-modal-overlay2' ng-click=cancel()></div>
   <div class='ng-modal-dialog' ng-if='show' ng-style='dialogStyle'>
     <!--<div class='ng-modal-close' ng-click='hideModal()'>X</div>-->
+    <canvas id="canvas1" ng-click="triggerDownload($event)" class="chart chart-bar" chart-options="opciones" chart-data="datos"
+            chart-labels="etiquetas1" chart-series="series">
+    </canvas>
+
     <div class='ng-modal-dialog-content'>
       Prueba de ventana de dialogo: <strong>popUpArtist</strong>
-      <p>Nombre: {{modalUser.name}}</p>
+      <!-- <p>Nombre: {{result.type}}</p>
       <p>Surname: {{modalUser.surname}}</p>
       <p>PIN: {{modalUser.shortKey}}</p>
       <input type="text" ng-model="modalUser.shortKey" />
       <button ng-click=save()>Salvar</button>
-      <button ng-click=cancel()>Cancelar</button>
+      <button ng-click=cancel()>Cancelar</button> -->
     </div>
   </div>
 </div>
